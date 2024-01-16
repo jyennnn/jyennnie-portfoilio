@@ -52,7 +52,7 @@ function App() {
   function onWheel(e) {
     console.log(e);
     if (e.deltaY > 0 && lightOn1.current.intensity < 0.7) {
-      lightOn1.current.intensity += 0.015;
+      lightOn1.current.intensity += 0.02;
       // lightOn2.current.intensity += 0.02;
       // lightOn3.current.intensity += 0.02
       // lightOn4.current.intensity += 0.02;
@@ -105,7 +105,7 @@ function App() {
           >
             <Spline
               onLoad={onLoad}
-              onWheelCapture={onWheel}
+              onWheelCapture={isMobile ? undefined : onWheel}
               scene="https://prod.spline.design/afMLsCa4S4wWTCHx/scene.splinecode"
             />
           </div>
@@ -116,7 +116,7 @@ function App() {
               <motion.div
                 initial={"offscreen"}
                 whileInView={"onscreen"}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.05 }}
                 transition={{ staggerChildren: 0.5 }}
                 style={{
                   display: "flex",
@@ -209,7 +209,7 @@ function App() {
             width: "100%",
             backgroundColor: "#000000",
             justifyContent: "center",
-            position: content ? "" : "fixed",
+            position: content || isMobile ? "" : "fixed",
             zIndex: 0,
           }}
         >
