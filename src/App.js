@@ -51,14 +51,14 @@ function App() {
 
   function onWheel(e) {
     console.log(e);
-    if (e.deltaY > 0 && lightOn1.current.intensity < 0.8) {
-      lightOn1.current.intensity += 0.005;
+    if (e.deltaY > 0 && lightOn1.current.intensity < 0.7) {
+      lightOn1.current.intensity += 0.015;
       // lightOn2.current.intensity += 0.02;
       // lightOn3.current.intensity += 0.02
       // lightOn4.current.intensity += 0.02;
       // lightOn5.current.intensity += 0.02
 
-      if (lightOn1.current.intensity > 0.6) {
+      if (lightOn1.current.intensity > 0.45) {
         setBright(true);
 
         setTimeout(() => {
@@ -112,7 +112,7 @@ function App() {
 
           {/* SCROLL ICON */}
           {bright || isMobile ? (
-            <div>
+            <>
               <motion.div
                 initial={"offscreen"}
                 whileInView={"onscreen"}
@@ -179,8 +179,12 @@ function App() {
                   />
                 </Button>
               </motion.div>
-            </div>
+            </>
           ) : (
+            <div
+              style={{
+                width: 255,
+              }}>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{
@@ -196,6 +200,7 @@ function App() {
                 <span class="scroll-icon__wheel-inner"></span>
               </span>
             </motion.div>
+            </div>
           )}
         </div>
 
