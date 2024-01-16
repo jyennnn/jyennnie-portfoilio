@@ -64,9 +64,10 @@ code {
 }
 
 .scroll-icon {
-  position: absolute;
-  left: 55%;
-  top: 35%;
+  position: relative;
+  margin: 20px;
+  /* left: 55%;
+  top: 35%; */
   height: 2.2em;
   width: 1.3em;
   border: .15em solid #a3a3a3;

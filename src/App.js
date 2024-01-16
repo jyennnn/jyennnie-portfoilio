@@ -14,6 +14,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import SmoothScroll from "./components/SmoothScroll";
 import ProjectSection from "./components/sections/ProjectSection";
 import { goToLink } from "./components/functionality/goToLink";
+import { useMediaQuery } from "react-responsive";
 
 function App() {
   const lightOn1 = useRef();
@@ -24,6 +25,8 @@ function App() {
 
   const [bright, setBright] = useState(false);
   const [content, setContent] = useState(false);
+
+  const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
   const scrollDown = () => {
     window.scrollBy({
@@ -81,29 +84,102 @@ function App() {
       <SmoothScroll>
         <div
           style={{
-            position: "relative",
             height: "100vh",
             width: "100%",
             margin: "0 auto",
             backgroundColor: "#000000",
             justifyContent: "center",
             zIndex: 1,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: isMobile ? "column" : "row"
           }}
         >
-          <Spline
-            onLoad={onLoad}
-            onWheelCapture={onWheel}
+          <div
             style={{
-              height: "90%",
-              width: "100%",
-              position: "absolute",
+              height: "700px",
+              width: "300px",
+              position: "relative",
             }}
-            scene="https://prod.spline.design/afMLsCa4S4wWTCHx/scene.splinecode"
-          />
+          >
+            <Spline
+              onLoad={onLoad}
+              onWheelCapture={onWheel}
+              scene="https://prod.spline.design/afMLsCa4S4wWTCHx/scene.splinecode"
+            />
+          </div>
 
           {/* SCROLL ICON */}
-          {bright ? (
-            <div></div>
+          {bright || isMobile ? (
+            <div>
+              <motion.div
+                initial={"offscreen"}
+                whileInView={"onscreen"}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ staggerChildren: 0.5 }}
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  position: "relative",
+                }}
+              >
+                <Typography
+                  component={motion.div}
+                  variants={textAnimate}
+                  sx={{
+                    fontFamily: "Poppins",
+                    fontWeight: 400,
+                    fontSize: 35,
+                    color: "white",
+                  }}
+                >
+                  Joy Heng
+                </Typography>
+                <Typography
+                  component={motion.div}
+                  variants={textAnimate}
+                  sx={{
+                    fontFamily: "Poppins",
+                    fontWeight: 400,
+                    fontSize: 25,
+                    color: "#C778DD",
+                  }}
+                >
+                  full-stack developer
+                </Typography>
+              </motion.div>
+
+              <motion.div
+                initial={"offscreen"}
+                whileInView={"onscreen"}
+                viewport={{ once: true, amount: 1 }}
+                style={{
+                  position: "absolute",
+                  bottom: "10%", 
+                  right: "10%",
+                  visibility: isMobile ? "hidden" : "visible"
+                }}
+              >
+                <Button
+                  component={motion.div}
+                  variants={arrowAnimate}
+                  sx={{
+                    color: "#C778DD",
+                    borderRadius: "50%",
+                  }}
+                  onClick={scrollDown}
+                >
+                  <KeyboardDoubleArrowDownIcon
+                    sx={{
+                      fontSize: 40,
+                    }}
+                  />
+                </Button>
+              </motion.div>
+            </div>
           ) : (
             <motion.div
               initial={{ opacity: 0 }}
@@ -120,100 +196,6 @@ function App() {
                 <span class="scroll-icon__wheel-inner"></span>
               </span>
             </motion.div>
-          )}
-
-          {bright && (
-            <>
-              <div
-                style={{
-                  height: "90%",
-                  width: "100%",
-                  display: "flex",
-                }}
-              >
-                <div
-                  style={{
-                    width: "52%",
-                  }}
-                ></div>
-
-                {/* TITLE */}
-                <motion.div
-                  initial={"offscreen"}
-                  whileInView={"onscreen"}
-                  viewport={{ once: false, amount: 0.2 }}
-                  transition={{ staggerChildren: 0.5 }}
-                  style={{
-                    height: "90%",
-                    width: "48%",
-                    display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    position: "relative",
-                  }}
-                >
-                  <Typography
-                    component={motion.div}
-                    variants={textAnimate}
-                    sx={{
-                      fontFamily: "Poppins",
-                      fontWeight: 400,
-                      fontSize: 35,
-                      color: "white",
-                    }}
-                  >
-                    jyennnie
-                  </Typography>
-                  <Typography
-                    component={motion.div}
-                    variants={textAnimate}
-                    sx={{
-                      fontFamily: "Poppins",
-                      fontWeight: 400,
-                      fontSize: 25,
-                      color: "#C778DD",
-                    }}
-                  >
-                    full-stack developer
-                  </Typography>
-                </motion.div>
-              </div>
-
-              <motion.div
-                initial={"offscreen"}
-                whileInView={"onscreen"}
-                viewport={{ once: true, amount: 1 }}
-                style={{
-                  height: "10%",
-                  display: "flex",
-                  alignItems: "flex-end",
-                  justifyContent: "flex-start",
-                  flexDirection: "column",
-                  position: "relative",
-                  // left: "-10%",
-                }}
-              >
-                <Button
-                  component={motion.div}
-                  variants={arrowAnimate}
-                  sx={{
-                    marginRight: 10,
-                    color: "#C778DD",
-                    borderRadius: "50%",
-                    width: 60,
-                    height: 60,
-                  }}
-                  onClick={scrollDown}
-                >
-                  <KeyboardDoubleArrowDownIcon
-                    sx={{
-                      fontSize: 40,
-                    }}
-                  />
-                </Button>
-              </motion.div>
-            </>
           )}
         </div>
 
@@ -332,7 +314,7 @@ function App() {
                   color: "white",
                 }}
               >
-                jyennie
+                contact
               </Typography>
               <Typography
                 component={motion.div}
