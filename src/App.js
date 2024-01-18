@@ -254,7 +254,7 @@ function App() {
             sceneUrl="https://prod.spline.design/dAjtUwAO2yBQZYPr/scene.splinecode"
             projectName="Online Bazaar"
             projectDescription="built with MERN stack, an online shopping platform to showcase
-              local artisans."
+              local artisans. *Stay tuned for mobile optimization!"
             githubUrl="https://github.com/caiyinn/the-local-choice"
             demoUrl="https://the-local-choice.vercel.app/"
           />
@@ -272,7 +272,7 @@ function App() {
             sceneUrl="https://prod.spline.design/ZyYx6Mym4Szd2CU4/scene.splinecode"
             projectName="Rhythm Game"
             projectDescription="built with vanilla javascript, a music rhythm game that
-              showcases local Singapore music."
+              showcases local Singapore music. *Stay tuned for mobile optimization!"
             githubUrl="https://github.com/jyennnn/the-pastel-jukebox"
             demoUrl="https://jyennnn.github.io/"
           />
