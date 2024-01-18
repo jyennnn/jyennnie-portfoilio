@@ -275,7 +275,7 @@ function App() {
             whileInView={"onscreen"}
             viewport={{ once: false, amount: 0.2 }}
             style={{
-              height: "150px",
+              height: "100%",
               marginLeft: "12%",
               marginRight: "13%",
               backgroundColor: "#000000",
@@ -292,6 +292,7 @@ function App() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
+                paddingBottom: "50px"
               }}
             >
               <Typography
