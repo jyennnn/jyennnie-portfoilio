@@ -66,7 +66,7 @@ const ProjectSection = ({
           sx={{
             fontFamily: "Poppins",
             fontWeight: 300,
-            fontSize: 30,
+            fontSize: 28,
             color: "#B685F4",
           }}
         >
@@ -80,7 +80,7 @@ const ProjectSection = ({
             width: "50%",
             fontFamily: "Poppins",
             fontWeight: 300,
-            fontSize: 15,
+            fontSize: 14,
             color: "grey",
             marginTop: "10px",
           }}

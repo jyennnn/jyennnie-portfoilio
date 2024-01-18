@@ -18,10 +18,6 @@ import { useMediaQuery } from "react-responsive";
 
 function App() {
   const lightOn1 = useRef();
-  const lightOn2 = useRef();
-  const lightOn3 = useRef();
-  const lightOn4 = useRef();
-  const lightOn5 = useRef();
 
   const [bright, setBright] = useState(false);
   const [content, setContent] = useState(false);
@@ -39,24 +35,12 @@ function App() {
     lightOn1.current = spline.findObjectById(
       "830a2708-8ed9-49cf-a68e-085299899103"
     );
-    lightOn2.current = spline.findObjectById(
-      "57bd326d-6e57-4c6b-959c-422c966dce8c"
-    );
-    // lightOn3.current = spline.findObjectById("1a28f0f3-6f29-47b5-9113-3e8ea5d120e8")
-    lightOn4.current = spline.findObjectById(
-      "0c17cc62-9144-4d0b-90af-73c18113e10a"
-    );
-    // lightOn5.current = spline.findObjectById("ef18d56e-8e72-481e-870a-4e332e370cba")
   }
 
   function onWheel(e) {
     console.log(e);
     if (e.deltaY > 0 && lightOn1.current.intensity < 0.7) {
       lightOn1.current.intensity += 0.02;
-      // lightOn2.current.intensity += 0.02;
-      // lightOn3.current.intensity += 0.02
-      // lightOn4.current.intensity += 0.02;
-      // lightOn5.current.intensity += 0.02
 
       if (lightOn1.current.intensity > 0.45) {
         setBright(true);
@@ -68,14 +52,10 @@ function App() {
     }
     if (
       e.deltaY < 0 &&
-      lightOn1.current.intensity < 0.7 &&
+      lightOn1.current.intensity < 0.6 &&
       lightOn1.current.intensity > 0
     ) {
       lightOn1.current.intensity -= 0.02;
-      lightOn2.current.intensity -= 0.02;
-      // lightOn3.current.intensity -= 0.02
-      lightOn4.current.intensity -= 0.02;
-      // lightOn5.current.intensity -= 0.02
     }
   }
 
@@ -316,7 +296,7 @@ function App() {
                 sx={{
                   fontFamily: "Poppins",
                   fontWeight: 300,
-                  fontSize: 18,
+                  fontSize: 16,
                   color: "white",
                 }}
               >
@@ -328,7 +308,7 @@ function App() {
                 sx={{
                   fontFamily: "Poppins",
                   fontWeight: 300,
-                  fontSize: 18,
+                  fontSize: 16,
                   color: "#B685F4",
                 }}
               >
@@ -356,7 +336,7 @@ function App() {
               >
                 <LinkedInIcon
                   sx={{
-                    fontSize: 40,
+                    fontSize: 30  ,
                   }}
                 />
               </Button>
@@ -371,7 +351,7 @@ function App() {
               >
                 <GitHubIcon
                   sx={{
-                    fontSize: 40,
+                    fontSize: 30,
                   }}
                 />
               </Button>
