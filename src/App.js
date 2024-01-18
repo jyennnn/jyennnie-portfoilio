@@ -21,6 +21,8 @@ function App() {
 
   const [bright, setBright] = useState(false);
   const [content, setContent] = useState(false);
+  const [isSplineLoaded, setSplineLoaded] = useState(false);
+
 
   const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
@@ -35,6 +37,7 @@ function App() {
     lightOn1.current = spline.findObjectById(
       "830a2708-8ed9-49cf-a68e-085299899103"
     );
+    setSplineLoaded(true);
   }
 
   function onWheel(e) {
@@ -91,7 +94,7 @@ function App() {
           </div>
 
           {/* SCROLL ICON */}
-          {bright || isMobile ? (
+          {bright || isMobile && isSplineLoaded ? (
             <>
               <motion.div
                 initial={"offscreen"}
