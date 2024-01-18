@@ -63,6 +63,14 @@ function App() {
     }
   }
 
+  function onClick() {
+    setBright(true);
+
+    setTimeout(() => {
+      setContent(true);
+    }, 1500);
+  }
+
   return (
     <>
       <SmoothScroll>
@@ -90,6 +98,7 @@ function App() {
             <Spline
               onLoad={onLoad}
               onWheelCapture={isMobile ? undefined : onWheel}
+              onMouseDown={isMobile ? undefined : onClick}
               scene="https://prod.spline.design/afMLsCa4S4wWTCHx/scene.splinecode"
             />
           </div>
