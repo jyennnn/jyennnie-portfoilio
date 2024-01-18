@@ -247,7 +247,7 @@ function App() {
             projectDescription="built with react native, an app to track and record yoga
             practices"
             githubUrl="https://github.com/jyennnn/a-tiny-speck-app"
-            demoUrl=""
+            demoUrl="https://github.com/jyennnn/a-tiny-speck-app"
           />
 
           <ProjectSection
