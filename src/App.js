@@ -98,7 +98,7 @@ function App() {
         >
           <div
             style={{
-              height: "700px",
+              height: "550px",
               width: "300px",
               position: "relative",
             }}
@@ -184,6 +184,7 @@ function App() {
             <div
               style={{
                 width: 255,
+                marginBottom: 100
               }}>
             <motion.div
               initial={{ opacity: 0 }}
@@ -276,7 +277,7 @@ function App() {
 
           <ProjectSection
             sceneUrl="https://prod.spline.design/ZyYx6Mym4Szd2CU4/scene.splinecode"
-            projectName="Music Rhythm Game"
+            projectName="Rhythm Game"
             projectDescription="built with vanilla javascript, a music rhythm game that
               showcases local Singapore music."
             githubUrl="https://github.com/jyennnn/the-pastel-jukebox"
