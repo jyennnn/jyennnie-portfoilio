@@ -11,6 +11,9 @@ body {
   overscroll-behavior: none;
   overflow-x: hidden;
   user-select: none;
+  touch-action: pan-y;
+  zoom: 1;
+  min-zoom: 1;
 }
 
 code {

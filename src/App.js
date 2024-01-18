@@ -38,6 +38,7 @@ function App() {
       "830a2708-8ed9-49cf-a68e-085299899103"
     );
     setSplineLoaded(true);
+
   }
 
   function onWheel(e) {
