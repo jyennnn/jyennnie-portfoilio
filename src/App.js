@@ -188,7 +188,7 @@ function App() {
                 width: 255,
                 marginBottom: 100
               }}>
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
@@ -202,7 +202,7 @@ function App() {
               <span class="scroll-icon__wheel-outer">
                 <span class="scroll-icon__wheel-inner"></span>
               </span>
-            </motion.div>
+            </motion.div> */}
             </div>
           )}
         </div>
