@@ -335,7 +335,7 @@ function App() {
                   color: "#B685F4",
                 }}
               >
-                joyhengg@gmail.com
+                hellojyennie@gmail.com
               </Typography>
             </div>
 
