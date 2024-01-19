@@ -38,6 +38,13 @@ function App() {
       "830a2708-8ed9-49cf-a68e-085299899103"
     );
     setSplineLoaded(true);
+    setTimeout(() => {
+      setBright(true);
+    }, 1500);
+
+    setTimeout(() => {
+      setContent(true);
+    }, 4000);
 
   }
 
@@ -98,8 +105,8 @@ function App() {
           >
             <Spline
               onLoad={onLoad}
-              onWheelCapture={isMobile ? undefined : onWheel}
-              onMouseDown={isMobile ? undefined : onClick}
+              // onWheelCapture={isMobile ? undefined : onWheel}
+              // onMouseDown={isMobile ? undefined : onClick}
               scene="https://prod.spline.design/afMLsCa4S4wWTCHx/scene.splinecode"
             />
           </div>
@@ -118,6 +125,7 @@ function App() {
                   justifyContent: "center",
                   flexDirection: "column",
                   position: "relative",
+                  top: "-50px"
                 }}
               >
                 <Typography
