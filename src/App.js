@@ -63,7 +63,8 @@ function App() {
     }
   }
 
-  function onClick() {
+  function onClick(e) {
+    console.log(e)
     setBright(true);
 
     setTimeout(() => {
